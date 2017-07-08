@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  get 'home/index'
+  resources :tweets, only: [:create, :destroy]
+
+    get 'home/index'
+  root 'home#index'
 
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
